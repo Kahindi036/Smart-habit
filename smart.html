@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Login Form -->
+    <div class="form-box active" id="loginBox">
+        <h2>Welcome Back</h2>
+        <p>Login to track your habits</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p class="switch">
+            Don't have an account?
+            <span id="showSignup">Sign Up</span>
+        </p>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box" id="signupBox">
+        <h2>Create Account</h2>
+        <p>Start building better habits today</p>
+
+        <form id="signupForm">
+            <div class="input-group">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="signupPassword" placeholder="Password" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p class="switch">
+            Already have an account?
+            <span id="showLogin">Login</span>
+        </p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
