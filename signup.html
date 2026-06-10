@@ -17,14 +17,32 @@
         }
     </style>
         
-
+<div class="container">
+    <div
         <form id="signupForm">
 
   <input type="email" id="signupEmail" placeholder="Email" required>
 
   <input type="password" id="signupPassword" placeholder="Password" required>
+  <span
 
-  <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+  <div class="input-group password-container">
+    <input type="password" id="signupPassword" placeholder="Password" required>
+
+    <span class="eye-icon"
+          onclick="togglePassword('signupPassword', this)">
+        👁️
+    </span>
+    
+
+<div class="input-group password-container">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+    <span class="eye-icon"
+          onclick="togglePassword('confirmPassword', this)">
+        👁️
+    </span>
+</div>
 
   <button type="submit">Sign Up</button>
 
@@ -34,7 +52,27 @@
             <span id="showLogin">Login</span>
         </p>
     </div>
+    <script>
+document.getElementById("showLogin").addEventListener("click", () => {
+    window.location.href = "login.html";
+});
+</script>
     <script type="module" src="firebase.js"></script>
+    <script>
+function togglePassword(inputId, icon) {
+    const input = document.getElementById(inputId);
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.textContent = "🙈";
+    } else {
+        input.type = "password";
+        icon.textContent = "👁️";
+    }
+}
+  </script>
+  </div>
+</div>
 </body>
 
 </html>

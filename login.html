@@ -6,7 +6,22 @@
     <title>Smart Habit Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+function togglePassword(inputId, icon) {
+    const input = document.getElementById(inputId);
 
+    if (input.type === "password") {
+        input.type = "text";
+        icon.textContent = "🙈";
+    } else {
+        input.type = "password";
+        icon.textContent = "👁️";
+    }
+}
+</script>
+<body>
+    <div class="container">
+        <div class="form-box active" id="loginBox">
         <h2>Welcome Back</h2>
         <p>Login to track your habits</p>
 
@@ -15,8 +30,12 @@
                 <input type="email" id="loginEmail" placeholder="Email" required>
             </div>
 
-            <div class="input-group">
+            <div class="input-group password-container ">
                 <input type="password" id="loginPassword" placeholder="Password" required>
+                <span class="eye-icon" onclick="togglePassword('loginPassword', this)">
+    👁️
+  </span>
+
             </div>
 
             <button type="submit">Login</button>
@@ -27,6 +46,11 @@
             <span id="showSignup">Sign Up</span>
         </p>
     </div>
+   <script>
+document.getElementById("showSignup").addEventListener("click", () => {
+    window.location.href = "signup.html";
+});
+</script>
     <script type="module" src="firebase.js"></script>
 </body>
 </html>

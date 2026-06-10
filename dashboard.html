@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Habit Tracker Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>HabitTracker</h2>
+
+    <ul>
+      <li>🏠 Dashboard</li>
+      <li>✅ My Habits</li>
+      <li>📊 Progress</li>
+      <li>⚙ Settings</li>
+      <li>🚪 Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <div class="header">
+      <h1>Welcome Back 👋</h1>
+      <p>Track your daily habits and stay productive.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+
+      <div class="card">
+        <h3>Total Habits</h3>
+        <p id="totalHabits">4</p>
+      </div>
+
+      <div class="card">
+        <h3>Completed Today</h3>
+        <p id="completedHabits">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Current Streak</h3>
+        <p>7 Days 🔥</p>
+      </div>
+
+    </div>
+
+    <!-- Add Habit -->
+    <div class="add-habit-box">
+      <input type="text" id="habitInput" placeholder="Enter new habit">
+      <button onclick="addHabit()">Add Habit</button>
+    </div>
+
+    <!-- Habit List -->
+    <div class="habits-section">
+      <h2>Today's Habits</h2>
+
+      <div id="habitList">
+
+        <div class="habit">
+          <span>Drink Water</span>
+          <button onclick="completeHabit(this)">Complete</button>
+        </div>
+
+        <div class="habit">
+          <span>Exercise</span>
+          <button onclick="completeHabit(this)">Complete</button>
+        </div>
+
+        <div class="habit">
+          <span>Read Book</span>
+          <button onclick="completeHabit(this)">Complete</button>
+        </div>
+
+        <div class="habit">
+          <span>Code Practice</span>
+          <button onclick="completeHabit(this)">Complete</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="dashboard.js"></script>
+
+</body>
+</html>

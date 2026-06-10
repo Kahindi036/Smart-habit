@@ -17,6 +17,27 @@ body {
     );
 }
 
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 45px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+}
+
 .container {
     width: 400px;
 }
@@ -101,4 +122,11 @@ button:hover {
     .form-box {
         padding: 30px;
     }
+}
+.container {
+    width: 500px;
+    background: rgb(196, 92, 92);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
