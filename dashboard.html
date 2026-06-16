@@ -21,8 +21,9 @@
       <li>✅ My Habits</li>
       <li>📊 Progress</li>
       <li>⚙ Settings</li>
-      <li>🚪 Logout</li>
+      <li onclick="logout()">🚪 Logout</li>
     </ul>
+    <ul id="sidebarMenu"></ul>
   </div>
 
   <!-- Main Content -->
@@ -38,7 +39,7 @@
 
       <div class="card">
         <h3>Total Habits</h3>
-        <p id="totalHabits">4</p>
+        <p id="totalHabits">0</p>
       </div>
 
       <div class="card">
@@ -59,36 +60,26 @@
       <button onclick="addHabit()">Add Habit</button>
     </div>
 
+    <div class="progress-container">
+    <h3>Today's Progress</h3>
+
+    <progress
+        id="progressBar"
+        value="0"
+        max="100">
+    </progress>
+
+    <p id="progressText">0%</p>
+</div>
+
     <!-- Habit List -->
     <div class="habits-section">
       <h2>Today's Habits</h2>
 
       <div id="habitList">
 
-        <div class="habit">
-          <span>Drink Water</span>
-          <button onclick="completeHabit(this)">Complete</button>
         </div>
-
-        <div class="habit">
-          <span>Exercise</span>
-          <button onclick="completeHabit(this)">Complete</button>
-        </div>
-
-        <div class="habit">
-          <span>Read Book</span>
-          <button onclick="completeHabit(this)">Complete</button>
-        </div>
-
-        <div class="habit">
-          <span>Code Practice</span>
-          <button onclick="completeHabit(this)">Complete</button>
-        </div>
-
-      </div>
     </div>
-
-  </div>
 </div>
 
 <script type="module" src="dashboard.js"></script>

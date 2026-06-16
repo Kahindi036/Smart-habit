@@ -12,7 +12,8 @@ import {
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+    onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
@@ -35,6 +36,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+  console.log("Current user:", user);
+});
 
 console.log("Firebase connected successfully");
 
@@ -150,4 +155,3 @@ if (saveButton) {
     }
   });
 }
-

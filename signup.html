@@ -6,59 +6,66 @@
     <title>sign up</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <style>
-        body {
-            background-image: url("habit.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-        }
-    </style>
-        
+
+<style>
+    body {
+        background-image: url("habit.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+</style>
+
 <div class="container">
-    <div
-        <form id="signupForm">
 
-  <input type="email" id="signupEmail" placeholder="Email" required>
+    <form id="signupForm">
 
-  <input type="password" id="signupPassword" placeholder="Password" required>
-  <span
+        <input type="email"
+               id="signupEmail"
+               placeholder="Email"
+               required>
 
-  <div class="input-group password-container">
-    <input type="password" id="signupPassword" placeholder="Password" required>
+        <div class="input-group password-container">
+            <input type="password"
+                   id="signupPassword"
+                   placeholder="Password"
+                   required>
 
-    <span class="eye-icon"
-          onclick="togglePassword('signupPassword', this)">
-        👁️
-    </span>
-    
+            <span class="eye-icon"
+                  onclick="togglePassword('signupPassword', this)">
+                👁️
+            </span>
+        </div>
 
-<div class="input-group password-container">
-    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <div class="input-group password-container">
+            <input type="password"
+                   id="confirmPassword"
+                   placeholder="Confirm Password"
+                   required>
 
-    <span class="eye-icon"
-          onclick="togglePassword('confirmPassword', this)">
-        👁️
-    </span>
+            <span class="eye-icon"
+                  onclick="togglePassword('confirmPassword', this)">
+                👁️
+            </span>
+        </div>
+
+        <button type="submit">Sign Up</button>
+
+    </form>
+
+    <p class="switch">
+        Already have an account?
+        <span id="showLogin">Login</span>
+    </p>
+
 </div>
 
-  <button type="submit">Sign Up</button>
-
-</form>
-        <p class="switch">
-            Already have an account?
-            <span id="showLogin">Login</span>
-        </p>
-    </div>
-    <script>
+<script>
 document.getElementById("showLogin").addEventListener("click", () => {
     window.location.href = "login.html";
 });
-</script>
-    <script type="module" src="firebase.js"></script>
-    <script>
+
 function togglePassword(inputId, icon) {
     const input = document.getElementById(inputId);
 
@@ -70,9 +77,10 @@ function togglePassword(inputId, icon) {
         icon.textContent = "👁️";
     }
 }
-  </script>
-  </div>
-</div>
+</script>
+
+<script type="module" src="firebase.js"></script>
+
 </body>
 
 </html>
