@@ -17,14 +17,27 @@
     <h2>HabitTracker</h2>
 
     <ul>
-      <li>🏠 Dashboard</li>
-      <li>✅ My Habits</li>
-      <li>📊 Progress</li>
-      <li>⚙ Settings</li>
+      <li><a href="dashboard.html">🏠 Dashboard</a></li>
+      <li onclick="document.getElementById('myHabitsSection').scrollIntoView({behavior:'smooth'})">
+  ✅ My Habits
+</li>
+
+<li onclick="document.getElementById('settingsSection').scrollIntoView({behavior:'smooth'})">
+  ⚙ Settings
+</li>
+      <li onclick="scrollToProgress()">📊 Progress</li>
       <li onclick="logout()">🚪 Logout</li>
     </ul>
-    <ul id="sidebarMenu"></ul>
+    <div class="habits-section" id="myHabitsSection"></div>
+    <div class="progress-container" id="progressSection"></div>
+    <li onclick="document.getElementById('progressSection').scrollIntoView()">
+        <div id="settingsSection">
+  <h2>Settings</h2>
+  <p>Settings will go here.</p>
+</div>
+</li>
   </div>
+  <button id="enableNotifBtn">Enable Notifications 🔔</button>
 
   <!-- Main Content -->
   <div class="main-content">

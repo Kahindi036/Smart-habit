@@ -30,6 +30,37 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+// Firebase imports here
+// Auth setup here
+
+// =====================
+// STEP 1: ASK PERMISSION
+// =====================
+function requestNotificationPermission() {
+  if ("Notification" in window) {
+    Notification.requestPermission().then(permission => {
+      console.log("Notification permission:", permission);
+    });
+  }
+}
+
+// Run it when dashboard loads
+requestNotificationPermission();
+
+sendReminder("Test", "This is working!");
+
+// =====================
+// NOTIFICATIONS SECTION
+// =====================
+
+function sendReminder(title, message) {
+  if (Notification.permission === "granted") {
+    new Notification(title, {
+      body: message,
+      icon: "habit.jpg"
+    });
+  }
+}
 
 // =======================
 // AUTH CHECK (ONLY ONE)
@@ -231,4 +262,25 @@ function updateCompletedToday(habits) {
   ).length;
 
   document.getElementById("completedHabits").innerText = completedToday;
+}
+window.scrollToProgress = function () {
+    document
+        .getElementById("progressBar")
+        .scrollIntoView({ behavior: "smooth" });
+        function requestNotificationPermission() {
+  if ("Notification" in window) {
+    Notification.requestPermission().then(permission => {
+      console.log("Notification permission:", permission);
+    });
+  }
+}
+
+requestNotificationPermission();
+document.getElementById("enableNotifBtn").addEventListener("click", async () => {
+  const permission = await Notification.requestPermission();
+  console.log("Notification permission:", permission);
+});
+document.getElementById("enableNotifBtn").onclick = () => {
+  alert("Button works!");
+};
 }
