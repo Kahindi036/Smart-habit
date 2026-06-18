@@ -43,6 +43,7 @@ onAuthStateChanged(auth, (user) => {
 
 console.log("Firebase connected successfully");
 
+window.addEventListener("DOMContentLoaded", () => {
 
 // ===============================
 // 4. SIGN UP LOGIC
@@ -131,7 +132,6 @@ function togglePassword(inputId, icon) {
 // ===============================
 // 6. SAVE HABITS (FIRESTORE)
 // ===============================
-window.addEventListener("DOMContentLoaded", () => {
   const saveButton = document.getElementById("saveHabit");
 
 if (saveButton) {
