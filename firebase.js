@@ -87,34 +87,30 @@ if (signupForm) {
 // ===============================
 // 5. LOGIN LOGIC
 // ===============================
-const loginForm = document.getElementById("loginForm");
+window.addEventListener("DOMContentLoaded", () => {
 
-if (loginForm) {
-  loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  const loginForm = document.getElementById("loginForm");
 
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+  if (loginForm) {
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
 
-      alert("Login successful");
-      console.log(userCredential.user);
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
 
-      // Redirect to dashboard or perform other actions
-      window.location.href = "dashboard.html";
+        alert("Login successful");
+        window.location.href = "./dashboard.html";
 
-    } catch (error) {
-      alert(error.message);
-      console.error(error);
-    }
-  });
-}
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  }
+
+});
 
 function togglePassword(inputId, icon) {
   const input = document.getElementById(inputId);
