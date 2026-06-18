@@ -131,10 +131,12 @@ function togglePassword(inputId, icon) {
 // ===============================
 // 6. SAVE HABITS (FIRESTORE)
 // ===============================
-const saveButton = document.getElementById("saveHabit");
+  const saveButton = document.getElementById("saveHabit");
 
 if (saveButton) {
   saveButton.addEventListener("click", async () => {
+    alert("Button clicked!");
+
     const habitInput = document.getElementById("habitInput").value;
 
     if (!habitInput) {
@@ -151,8 +153,8 @@ if (saveButton) {
       alert("Habit saved successfully");
 
     } catch (error) {
+      alert(error.message);
       console.error(error);
-        alert("Error: " + error.message);
     }
   });
 }
